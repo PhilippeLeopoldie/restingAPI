@@ -59,7 +59,7 @@ namespace RestShop.Tests
       response.StatusCode.Should().Be(HttpStatusCode.OK);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task getMany_returns_JSON()
     {
       // act
@@ -69,7 +69,7 @@ namespace RestShop.Tests
       response.Content.Headers.ContentType.MediaType.Should().Be("application/json");
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task getMany_returns_presidents()
     {
       // act
@@ -80,7 +80,7 @@ namespace RestShop.Tests
       products.Should().HaveCountGreaterThan(3);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task getOne_returns_OK()
     {
       // act
@@ -91,7 +91,7 @@ namespace RestShop.Tests
       response.StatusCode.Should().Be(HttpStatusCode.OK);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task getOne_returns_JSON()
     {
       // act
@@ -101,7 +101,7 @@ namespace RestShop.Tests
       response.Content.Headers.ContentType.MediaType.Should().Be("application/json");
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task getOne_returns_correctData()
     {
       // act
@@ -113,7 +113,7 @@ namespace RestShop.Tests
     }
 
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task getOne_fails_for_non_existing()
     {
       // act
@@ -124,7 +124,7 @@ namespace RestShop.Tests
     }
 
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task post_returns_OK()
     {
       // act
@@ -135,7 +135,7 @@ namespace RestShop.Tests
       response.StatusCode.Should().Be(HttpStatusCode.Created);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task post_returns_JSON()
     {
       // act
@@ -145,7 +145,7 @@ namespace RestShop.Tests
       response.Content.Headers.ContentType.MediaType.Should().Be("application/json");
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task post_returns_correct_location_header()
     {
       // act
@@ -157,7 +157,7 @@ namespace RestShop.Tests
       response.Headers.Location.PathAndQuery.Should().Contain(president.Id);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task post_returns_president_data()
     {
       // act
@@ -170,7 +170,7 @@ namespace RestShop.Tests
       president.To.Should().Be(ADD_PRESIDENT_DATA.To);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task post_stores_president_data()
     {
       // arrange
@@ -186,7 +186,7 @@ namespace RestShop.Tests
       president.To.Should().Be(ADD_PRESIDENT_DATA.To);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task post_returns_400_for_no_post_data()
     {
       // act
@@ -197,7 +197,7 @@ namespace RestShop.Tests
       response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task post_returns_400_for_no_name_in_post_data()
     {
       // arrange
@@ -213,7 +213,7 @@ namespace RestShop.Tests
       jsonResponse.Should().Contain("The Name field is required");
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task post_returns_400_for_no_from_in_post_data()
     {
       // arrange
@@ -229,7 +229,7 @@ namespace RestShop.Tests
       jsonResponse.Should().Contain("The From field is required");
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task put_returns_OK()
     {
       // arrange
@@ -250,7 +250,7 @@ namespace RestShop.Tests
       response.StatusCode.Should().Be(HttpStatusCode.OK);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task put_returns_JSON()
     {
       // arrange
@@ -270,7 +270,7 @@ namespace RestShop.Tests
       response.Content.Headers.ContentType.MediaType.Should().Be("application/json");
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task put_returns_update_resource()
     {
       // arrange
@@ -294,7 +294,7 @@ namespace RestShop.Tests
     }
 
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task put_updates_data_in_database()
     {
       // arrange
@@ -318,7 +318,7 @@ namespace RestShop.Tests
       president.To.Should().Be(request.To);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task put_returns_400_for_no_post_data()
     {
       // act
@@ -329,7 +329,7 @@ namespace RestShop.Tests
       response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task put_returns_404_for_no_id_found()
     {
       // arrange
@@ -348,7 +348,7 @@ namespace RestShop.Tests
       response.StatusCode.Should().Be(HttpStatusCode.NotFound);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task put_returns_400_for_no_name_in_post_data()
     {
       // arrange
@@ -368,7 +368,7 @@ namespace RestShop.Tests
       jsonResponse.Should().Contain("The Name field is required");
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task put_returns_400_for_no_from_in_post_data()
     {
       // arrange
@@ -388,7 +388,7 @@ namespace RestShop.Tests
       jsonResponse.Should().Contain("The From field is required");
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task delete_returns_not_content()
     {
       // arrange
@@ -403,7 +403,7 @@ namespace RestShop.Tests
       response.StatusCode.Should().Be(HttpStatusCode.NoContent);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task delete_deletes_data_in_database()
     {
       // arrange
@@ -420,7 +420,7 @@ namespace RestShop.Tests
       response.StatusCode.Should().Be(HttpStatusCode.NotFound);
     }
 
-    [Fact(Skip = "To not flood with failing tests")]
+    [Fact]
     public async Task delete_returns_no_content_for_non_existing_id()
     {
       // act
